@@ -2,7 +2,7 @@
 <html lang="en">
 <head> <!--title base style link script meta-->
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width">
     
     <title>Basic input types</title>
     <link rel="stylesheet" href="../css/form.css">
@@ -56,6 +56,15 @@
         </div>
     </form>
     <script>
+         const text=document.querySelector('#text');
+         const textError=document.querySelector('.text-error');
+         text.addEventListener('input', function(){
+             let namRegex= new RegExp(/^[A-Z][a-z]{2,}$/);
+             if(namRegex.test(text.value))
+              textError.textContent="";
+              else
+              textError.textContent="Name is incorrect";
+         })
                    
         const salary=document.querySelector('#salary');
          const output=document.querySelector('.salary-output');
