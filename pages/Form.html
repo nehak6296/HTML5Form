@@ -65,6 +65,16 @@
               else
               textError.textContent="Name is incorrect";
          })
+
+         const text=document.querySelector('#text');
+         const textError=document.querySelector('.text-error');
+         text.addEventListener('input', function(){
+             let namRegex= new RegExp(/^[a-zA-Z]+([._+-][a-zA-Z]+)*[@][a-zA-Z]+[.][a-zA-Z]{2,3}(.[a-zA-Z]{2,3})?$/);
+             if(namRegex.test(text.value))
+              textError.textContent="";
+              else
+              textError.textContent="Invalid Email";
+         })
                    
         const salary=document.querySelector('#salary');
          const output=document.querySelector('.salary-output');
